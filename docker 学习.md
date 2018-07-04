@@ -14,7 +14,7 @@ docker pull  仓库   从某仓库获取镜像   例： docker pull ubuntu
 
 docker inspect image_id 查看镜像相关信息
 
-docker run -it image_id /bin/bash   创建命令行交互式的docker
+docker run -it image_id /bin/bash   创建命令行交互式的docker,如果不加it docker 启动之后会自动停止
 
 docker commit container_id  image_tag  生成新的镜像，保存修改,如果不保存，对docker的修改将无效
 
