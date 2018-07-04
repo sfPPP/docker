@@ -109,3 +109,7 @@ docker file
 
   ```
 
+docker 的events 、 history、logs 命令
+    - docker events container_id  打印实时的系统时间
+    - docker history image_id     查看镜像的历史版本信息
+    - docker logs container_id    打印系统运行日志
