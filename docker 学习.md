@@ -14,4 +14,9 @@ docker inspect image_id 查看镜像相关信息
 docker run -it image_id /bin/bash   创建命令行交互式的docker
 
 docker commit container_id  image_tag  生成新的镜像，保存修改,如果不保存，对docker的修改将无效
+
 docker search 关键字  搜索镜像 例： docker search centos
+
+docker rmi iamge_id 删除镜像
+
+docker   rm container_id 删除容器
