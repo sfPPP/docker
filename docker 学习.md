@@ -90,3 +90,22 @@ docker file
        docker images 可以看到新增的那条为刚刚docker build 命令执行docker file刚做好的镜像
 
   ```
+  ***
+  ```
+     启动容器，并添加端口映射10022----22 宿主的10022端口映射docker 的22端口
+    131  docker run -it -p 10022:22 -d fde4f7a7eabf /bin/bash
+    132  netstat -ntlp
+    133  ssh 192.168.19.132 -p 10022
+  ```
+  ***
+  在宿主或者其他机器上通过ssh访问10022端口来登陆容器
+  ```
+  [root@localhost ~]# ssh 192.168.19.132 -p 10022
+  The authenticity of host '[192.168.19.132]:10022 ([192.168.19.132]:10022)' can't be established.
+  ECDSA key fingerprint is SHA256:MjZzYNfmS9HwVJ7tI8mEn79/EsznlAE9lIbyBVaseX0.
+  ECDSA key fingerprint is MD5:1b:c3:08:a1:e6:90:ab:88:2f:fe:11:b6:d4:19:a8:df.
+  Are you sure you want to continue connecting (yes/no)? yes
+  Warning: Permanently added '[192.168.19.132]:10022' (ECDSA) to the list of known hosts.
+
+  ```
+
