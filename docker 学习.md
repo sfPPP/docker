@@ -39,3 +39,8 @@ docker   rm container_id 删除容器
        ```
 
    - 基于dockerfile创建
+   
+   
+   镜像的导入导出
+    -导出 --将docker iamges 保存到本地   docekr save -o  文件名   image_id 
+    -导入 --将本地的镜像导入到images      docker load --input 本地文件名 或者 docker load < 本地文件名 
