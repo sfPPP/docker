@@ -49,3 +49,44 @@ docker   rm container_id 删除容器
        - docker create 创建的docker是stopped状态，需要docker start 才能启动docker
        - docker run 是创建并启动docker
        
+       
+docker file
+  ```
+       第一行必须指定基于的基础镜像
+      FROM   ubuntu:15.10       镜像的源（系统为ubuntu 15.10的）
+       维护者信息
+      MAINTAINER     FISHER 'fisher@sudops.com'
+
+        镜像的操作指令
+      RUN  /bin/echo 'root:123456' |chpasswd
+
+      RUN     useradd runoob
+      RUN     /bin/echo 'runoob:123456' |chpasswd
+      RUN     /bin/echo -e "LANG=\"en_US.UTF-8\"" >/etc/default/local
+      EXPOSE  22
+      EXPOSE  80
+
+        容器启动时执行指令
+      CMD     /usr/sbin/sshd -D
+
+
+      每一个指令都会在镜像上创建一个新的层，每一个指令的前缀都必须是大写的。
+
+      第一条FROM，指定使用哪个镜像源
+
+      RUN 指令告诉docker 在镜像内执行命令，安装了什么。。。
+
+      然后，我们使用 Dockerfile 文件，通过 docker build 命令来构建一个镜像。
+       docker build -t runoob/centos:6.7 .
+
+      参数说明：
+
+          -t ：指定要创建的目标镜像名
+
+          . ：Dockerfile 文件所在目录，可以指定Dockerfile 的绝对路径
+
+      使用docker images 查看创建的镜像已经在列表中存在,镜像ID为860c279d2fec
+      然后可以执行docker run -i -t  runoob/ubuntu:15.10 /bin/bash  来启动镜像
+       docker images 可以看到新增的那条为刚刚docker build 命令执行docker file刚做好的镜像
+
+  ```
