@@ -1,8 +1,9 @@
 # docker
-docker 三大核心概念：
- -image 镜像   
- -docker 容器  
- -repository 仓库
+docker 三大核心概念
+
+ - image 镜像   
+ - docker 容器  
+ - repository 仓库
 
 docker images  查看所有镜像
 
