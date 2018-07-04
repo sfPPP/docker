@@ -27,4 +27,15 @@ docker   rm container_id 删除容器
 [docker创建镜像的三种方法](http://www.cnblogs.com/zhangmingcheng/p/5720792.html)
    - 基于已有的镜像创建的容器创建   ----保存对镜像的修改
    - 基于本地模板导入
+      ```
+            下载模板镜像
+           134  wget http://download.openvz.org/template/precreated/ubuntu-14.04-x86_64-minimal.tar.gz
+            将模板镜像转为docker镜像
+           136  cat  ubuntu-14.04-x86_64-minimal.tar.gz|docker import - ubuntu:14.04
+            查看docker镜像
+           138  docker images
+             启动docker 镜像
+           139  docker run -it  0a90991f0ed9  /bin/bash
+       ```
+
    - 基于dockerfile创建
