@@ -1,5 +1,8 @@
 # docker
-docker 三大核心概念： image 镜像 /  docker 容器  / repo 仓库
+docker 三大核心概念：
+ -image 镜像   
+ -docker 容器  
+ -repository 仓库
 
 docker images  查看所有镜像
 
@@ -20,3 +23,8 @@ docker search 关键字  搜索镜像 例： docker search centos
 docker rmi iamge_id 删除镜像
 
 docker   rm container_id 删除容器
+
+[docker创建镜像的三种方法](http://www.cnblogs.com/zhangmingcheng/p/5720792.html)
+   - 基于已有的镜像创建的容器创建   ----保存对镜像的修改
+   - 基于本地模板导入
+   - 基于dockerfile创建
