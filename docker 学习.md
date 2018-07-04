@@ -44,3 +44,8 @@ docker   rm container_id 删除容器
    镜像的导入导出
     -导出 --将docker iamges 保存到本地   docekr save -o  文件名   image_id 
     -导入 --将本地的镜像导入到images      docker load --input 本地文件名 或者 docker load < 本地文件名 
+    
+    docker create 和 docker run区别：
+       - docker create 创建的docker是stopped状态，需要docker start 才能启动docker
+       - docker run 是创建并启动docker
+       
